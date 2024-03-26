@@ -1,7 +1,8 @@
 const express = require('express');
+const router = express.Router();
+
 const prodCatController = require('../controllers/prodCatController');
 
-const router = express.Router();
 
 router.get('/', prodCatController.getAllCat);
 

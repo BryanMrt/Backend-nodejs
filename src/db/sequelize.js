@@ -1,5 +1,7 @@
  const { Sequelize, DataTypes } = require('sequelize');
- const CategorieModel = require('../models/prodCategory')
+ 
+ const CategorieModel = require('../models/prodCategory');
+ const ProductModel = require('../models/product');
 
  const sequelize = new Sequelize('smile', 'root', '', 
  {
@@ -11,7 +13,8 @@
     logging: false
   })
 
-  const Categorie = CategorieModel(sequelize, DataTypes)
+  const Categorie = CategorieModel(sequelize, DataTypes);
+  const Product = ProductModel(sequelize, DataTypes);
 
   sequelize
   .authenticate()
@@ -23,5 +26,5 @@
   }
 
   module.exports = { 
-    initDb, Categorie
+    initDb, Categorie, Product
   }

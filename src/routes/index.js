@@ -2,10 +2,10 @@ const express = require("express");
 const router = express.Router();
 
 const categoryRoute = require("./catRoute");
-// const products = require('./productRoute');
+const productRoute = require('./productRoute');
 
 router.use("/api/categories", categoryRoute);
-// router.
+router.use("/api/products", productRoute);
 
 
 module.exports = router;
