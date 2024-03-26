@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    return sequelize('categorie', {
+    return sequelize.define('categorie', {
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
@@ -17,8 +17,7 @@ module.exports = (sequelize, DataTypes) => {
             }             
         }
     }, {
-        timestamps: true,
-        createdAt: 'created',
-        updatedAt: false
+        tableName: 'categorie',
+        timestamps: false,
     })
 }

@@ -2,6 +2,7 @@ const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const sequelize = require('./src/db/sequelize');
+const cors = require('cors');
 
 const app = express()
 const port = 3000
@@ -9,11 +10,14 @@ const port = 3000
 app
   .use(morgan('dev'))
   .use(bodyParser.json())
+  .use(cors())
+  
+sequelize.initDb();
 
 const indexRouter = require("./src/routes/index");
 app.use("/", indexRouter); 
 
-sequelize.initDb();
+
 
 // Gestion des routes 404.
 app.use(({res}) => {
