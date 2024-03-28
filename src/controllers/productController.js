@@ -24,7 +24,7 @@ exports.getProductById = (req, res) => {
         res.json({ message, data: product });
     })
     .catch(error => {
-        const message = `Le produit n'a pas pu être récupéré. Réessayez dans quelque instants.`;
+        const message = `La catégorie de produit n'a pas pu être récupéré. Réessayez dans quelque instants.`;
         res.status(500).json({message, data: error});
     })
 }
